@@ -20,6 +20,14 @@ export const App = () => {
   
   const hideCompletedFilter = { isChecked: { $ne: true } };
 
+  const pendingTasksCount = useTracker(() =>
+    TasksCollection.find(hideCompletedFilter).count()
+  );
+
+  const pendingTasksTitle = `${
+    pendingTasksCount ? ` Pending tasks (${pendingTasksCount})` : ''
+  }`;
+
   const tasks = useTracker(() =>
     TasksCollection.find(hideCompleted ? hideCompletedFilter : {}, {
       sort: { createdAt: -1 }
@@ -30,6 +38,7 @@ export const App = () => {
       <div className="app-bar">
         <div className="app-header">
           <h1>Focus on being productive instead of busy</h1>
+          <h2>{pendingTasksTitle}</h2>
         </div>
       </div>
 
