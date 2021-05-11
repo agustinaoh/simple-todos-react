@@ -1,7 +1,6 @@
 import React from 'react';
-import { TasksCollection } from '../api/TasksCollection';
 
-export const Task = ({ task, onCheckboxClick }) => {
+export const Task = ({ task, onCheckboxClick, onDeleteClick }) => {
   return (
     <li>
       <input
@@ -10,7 +9,8 @@ export const Task = ({ task, onCheckboxClick }) => {
         onClick={() => onCheckboxClick(task)}
         readOnly
       />
-      {task.text}
+      <span>{task.text}</span>
+      <button onClick={ () => onDeleteClick(task) }>&times;</button>
     </li>
   )
 };
