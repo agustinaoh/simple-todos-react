@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Open+Sans:wght@300;600&display=swap');
 
+:root{
+  --color: #d439e2;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   padding: 40px;
@@ -109,7 +113,7 @@ header {
 
 .tasks > li {
   color: white;
-  background-color: #d439e2;
+  background-color: var(--color);
   border-radius: 40px;
   list-style: none;
   font-weight: 600;
@@ -126,4 +130,13 @@ header {
 
 .tasks li > button {
   background-color: transparent;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+}
+
+.filter > button {
+  background-color: #62807e;
 }
