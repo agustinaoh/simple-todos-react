@@ -4,6 +4,14 @@ import { TasksCollection } from '../api/TasksCollection';
 import { Task } from './Task';
 import { TaskForm } from './TaskForm'
 
+const toggleChecked = ({ _id, isChecked}) => {
+  TasksCollection.update(_id, {
+    $set: {
+      isChecked: !isChecked
+    }
+  })
+}
+
 export const App = () => {
 
   const tasks = useTracker(() =>
@@ -16,7 +24,9 @@ export const App = () => {
       <TaskForm />
       
       <ul>
-        { tasks.map(task => <Task key={ task._id } task={ task }/>) }
+        { tasks.map(
+          task => <Task key={ task._id } task={ task } onCheckboxClick={toggleChecked} />
+        ) }
       </ul>
 
     </div>
