@@ -57,11 +57,11 @@ h2 { font-style: italic; }
 }
 
 header {
-  background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+  /* background: #d2edf4; */
+  /* background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%); */
   padding: 20px 15px 15px 15px;
   position: relative;
-  box-shadow: 0 3px 3px rgba(34, 25, 25, 0.4);
+  /* box-shadow: 0 3px 3px rgba(34, 25, 25, 0.4); */
 }
 
 .app-bar {
@@ -179,4 +179,13 @@ header {
 
 .login-form > div > button {
   background-color: #62807e;
+}
+
+.user {
+  display: flex;
+
+  align-self: flex-end;
+
+  margin: 8px 16px 0;
+  font-weight: bold;
 }

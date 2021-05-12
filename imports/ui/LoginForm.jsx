@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import React, { userState, useState } from 'react';
+import React, { useState } from 'react';
 
 export const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -9,17 +9,17 @@ export const LoginForm = () => {
     e.preventDefault();
 
     Meteor.loginWithPassword(username, password);
-  }
+  };
 
-  return(
-    <form onSubmit={submit} className='login-form'>
+  return (
+    <form onSubmit={submit} className="login-form">
       <div>
         <label htmlFor="username">Username</label>
-        
+
         <input
           type="text"
-          placeholder='Username'
-          name='username'
+          placeholder="Username"
+          name="username"
           required
           onChange={e => setUsername(e.target.value)}
         />
@@ -27,17 +27,19 @@ export const LoginForm = () => {
 
       <div>
         <label htmlFor="password">Password</label>
-        
+
         <input
           type="password"
-          placeholder='Password'
-          name='password'
+          placeholder="Password"
+          name="password"
           required
           onChange={e => setPassword(e.target.value)}
         />
       </div>
 
-      <button type='submit'>Log in</button>
+      <div>
+        <button type="submit">Log in</button>
+      </div>
     </form>
   );
-}
+};
