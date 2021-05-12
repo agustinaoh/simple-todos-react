@@ -1,5 +1,5 @@
 import { check } from 'meteor/check';
-import { TasksCollection } from './TasksCollection';
+import { TasksCollection } from '../db/TasksCollection';
 
 Meteor.methods({
 
@@ -17,17 +17,18 @@ Meteor.methods({
     })
   },
 
-  'task.remove'(taskId) {
-    check(taskId, String)
-
+  'tasks.remove'(taskId) {
+    check(taskId, String);
+ 
     if (!this.userId) {
-      throw new Meteor.Error('Not authorized.');    
+      throw new Meteor.Error('Not authorized.');
     }
-
+ 
     TasksCollection.remove(taskId);
   },
+ 
 
-  'task.setIsChecked'(taskId, isChecked) {
+  'tasks.setIsChecked'(taskId, isChecked) {
     check(taskId, String);
     check(isChecked, Boolean);
     
