@@ -3,6 +3,8 @@ import { useTracker} from 'meteor/react-meteor-data';
 import { TasksCollection } from '../api/TasksCollection';
 import { Task } from './Task';
 import { TaskForm } from './TaskForm'
+import { LoginForm } from './LoginForm';
+
 
 const toggleChecked = ({ _id, isChecked}) => {
   TasksCollection.update(_id, {
@@ -61,8 +63,8 @@ export const App = () => {
           ))}
         </ul>
 
-        <label for="color">Choose a background color</label>
-        <input id="color" type="color" name="color" value="#ffecd7"></input>
+        {/* <label for="color">Choose a background color</label>
+        <input id="color" type="color" name="color" value="#ffecd7"></input> */}
       </div>
     </div>
   )
