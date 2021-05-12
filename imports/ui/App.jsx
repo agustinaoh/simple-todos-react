@@ -25,10 +25,6 @@ export const App = () => {
 
   const pendingOnlyFilter = { ...hideCompletedFilter, ...userFilter };
 
-  const pendingTasksTitle = `${
-    pendingTasksCount ? ` Pending tasks (${pendingTasksCount})` : ''
-  }`;
-
   const { tasks, pendingTasksCount, isLoading } = useTracker(() => {
     const noDataAvailable = { tasks: [], pendingTasksCount: 0 };
     
@@ -53,6 +49,10 @@ export const App = () => {
 
     return { tasks, pendingTasksCount };
   });
+
+  const pendingTasksTitle = `${
+    pendingTasksCount ? ` Pending tasks (${pendingTasksCount})` : ''
+  }`;
 
   const logout = () => Meteor.logout();
 
@@ -82,6 +82,9 @@ export const App = () => {
                 {hideCompleted ? 'Show all' : 'Hide Completed'}
               </button>
             </div>
+
+            {isLoading && <div className="loading">loading...</div>}
+
             <ul className='tasks'>
               { tasks.map(task => (
                 <Task
