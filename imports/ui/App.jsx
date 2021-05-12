@@ -1,27 +1,25 @@
 import React, { Fragment, useState } from 'react';
 import { useTracker} from 'meteor/react-meteor-data';
 import { TasksCollection } from '../api/TasksCollection';
+// import { TasksCollection } from '/imports/db/TasksCollection';
 import { Task } from './Task';
 import { TaskForm } from './TaskForm'
 import { LoginForm } from './LoginForm';
+import { Meteor } from 'meteor/meteor';
 
 
-const toggleChecked = ({ _id, isChecked}) => {
-  TasksCollection.update(_id, {
-    $set: {
-      isChecked: !isChecked
-    }
-  })
-}
 
-const deleteTask = ({ _id }) => TasksCollection.remove(_id);
+const toggleChecked = ({ _id, isChecked }) =>
+  Meteor.call('tasks.setIsChecked', _id, !isChecked);
+
+const deleteTask = ({ _id }) => Meteor.call('tasks.remove', _id);
 
 export const App = () => {
 
   const user = useTracker(() => Meteor.user());
 
   const [hideCompleted, setHideCompleted] = useState(false);
-  
+
   const hideCompletedFilter = { isChecked: { $ne: true } };
 
   const userFilter = user ? { userId: user._id } : {};
@@ -32,7 +30,7 @@ export const App = () => {
     if (!user) {
       return 0;
     }
-    
+
     return TasksCollection.find(pendingOnlyFilter).count()
   });
 
@@ -51,7 +49,7 @@ export const App = () => {
   });
 
   const logout = () => Meteor.logout();
-  
+
   return (
     <div className='app'>
       <header>
@@ -88,7 +86,7 @@ export const App = () => {
               />
               ))}
             </ul>
-    
+
             {/* <label for="color">Choose a background color</label>
             <input id="color" type="color" name="color" value="#ffecd7"></input> */}
           </Fragment>
