@@ -51,7 +51,7 @@ export const App = () => {
 
     const pendingTasksCount = TasksCollection.find(pendingOnlyFilter).count();
 
-    return { tasks, pendingTasksCount }
+    return { tasks, pendingTasksCount };
   });
 
   const logout = () => Meteor.logout();
