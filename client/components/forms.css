@@ -28,6 +28,8 @@
   font-size: 1em;
   margin-right: 16px;
   margin-top: 4px;
+  text-align: center;
+  color: white;
 }
 
 /* .login-form > div > input:focus {
@@ -38,13 +40,38 @@
   color: white;
 }
 
-
 input:focus {
-  border: 3px solid yellow;
+  outline: 0;
   color: white;
   box-sizing: border-box;
 }
 
 .login-form > div > input:focus {
   text-align: center;
+}
+
+.task-form {
+  display: flex;
+  margin: 16px 0;
+}
+
+.task-form > input {
+  font-style: italic;
+  flex-grow: 1;
+  box-sizing: border-box;
+  border-radius: 30px;
+  padding: 10px 16px;
+  background: transparent;
+  border: 1px solid #aaa;
+  width: 100%;
+  font-size: 1em;
+  margin-right: 16px;
+  color: white;
+}
+
+input:focus {
+  outline: 0;
+  border: 1px solid white;
+  color: white;
+  box-shadow: 0 0 3px white;
 }

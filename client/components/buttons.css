@@ -59,14 +59,6 @@ button:focus {
 }
  */
 
-
-.task-form > input:focus {
-  outline: 0;
-  border: 1px solid white;
-  color: white;
-  box-shadow: 0 0 3px white;
-}
-
 /* .task-form > button {
   min-width: 100px;
   height: 95%;
