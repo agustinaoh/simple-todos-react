@@ -51,7 +51,7 @@ export const App = () => {
   });
 
   const pendingTasksTitle = `${
-    pendingTasksCount ? `${pendingTasksCount} pending tasks` : ''
+    pendingTasksCount ? `/ ${pendingTasksCount} pending tasks /` : ''
   }`;
 
   const logout = () => Meteor.logout();
@@ -62,7 +62,7 @@ export const App = () => {
         <div className="app-bar">
           <div className="app-header">
             <h1>Focus on being <span>productive</span> instead of busy</h1>
-            <h2><span>/ {pendingTasksTitle} /</span></h2>
+            <h2><span>{pendingTasksTitle}</span></h2>
           </div>
         </div>
       </header>

@@ -17,7 +17,7 @@ h1 {
 }
 
 h1 > span {
-  background-image: linear-gradient(90deg, #e67399, #f2a640);
+  background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
   background-position: bottom;
   background-size: 100% 30%;
   background-repeat: no-repeat;
@@ -44,7 +44,7 @@ h2 {
 
 .app-bar h2 > span {
   padding-bottom: 4px;
-  border-bottom: 2px solid lightcyan;
+  border-bottom: 2px solid #c099ff;
   font-size: 0.9rem;
 ;}
 

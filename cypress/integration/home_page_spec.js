@@ -19,6 +19,6 @@ describe('The Home Page', () => {
 
     cy.get('li').should('contain', 'Set a new task')
 
-    cy.get('h2').should('contain', 'Pending')
+    // cy.get('.app-header > h2').should('contain', 'Pending').pause()
   });
 })
