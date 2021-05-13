@@ -61,7 +61,7 @@ export const App = () => {
       <header>
         <div className="app-bar">
           <div className="app-header">
-            <h1>Focus on being productive instead of busy</h1>
+            <h1>Focus on being <span>productive</span> instead of busy</h1>
             <h2>{pendingTasksTitle}</h2>
           </div>
         </div>
