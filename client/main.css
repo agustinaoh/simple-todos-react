@@ -39,7 +39,14 @@ h2 {
   margin: 0;
   display: inline-block;
   margin-right: 1em;
+  line-height: 2rem;
 }
+
+.app-bar h2 > span {
+  padding-bottom: 4px;
+  border-bottom: 2px solid lightcyan;
+  font-size: 0.9rem;
+;}
 
 .tasks {
   padding-inline-start: 0;
@@ -76,13 +83,19 @@ h2 {
 
 .user {
   display: flex;
-  align-self: flex-end;
-  margin: 8px 16px 0;
+  align-items: flex-end;
+  flex-direction: column;
   font-weight: bold;
+  margin: 40px 0 50px 0;
 }
 
-.user > p > span {
+.greet-user > p > span {
   text-transform: capitalize;
+}
+
+.user p,
+.user h2 {
+  margin: 2px 0;
 }
 
 .loading {

@@ -51,7 +51,7 @@ export const App = () => {
   });
 
   const pendingTasksTitle = `${
-    pendingTasksCount ? ` Pending tasks (${pendingTasksCount})` : ''
+    pendingTasksCount ? `${pendingTasksCount} pending tasks` : ''
   }`;
 
   const logout = () => Meteor.logout();
@@ -62,7 +62,7 @@ export const App = () => {
         <div className="app-bar">
           <div className="app-header">
             <h1>Focus on being <span>productive</span> instead of busy</h1>
-            <h2>{pendingTasksTitle}</h2>
+            <h2><span>/ {pendingTasksTitle} /</span></h2>
           </div>
         </div>
       </header>
@@ -71,13 +71,15 @@ export const App = () => {
         {user ? (
           <Fragment>
 
-            <div className="user" onClick={logout}>
-              <p>Hello, <span>{user.username}</span>! 🚪</p>
+            <div className="user">
+              <div className="greet-user" onClick={logout}>
+                <p>Hello, <span>{user.username}</span> 🚪</p>
+              </div>
+              <h2>
+                Let's get things done!
+              </h2>
             </div>
             <div>
-              <p>
-                Let's get things done
-              </p>
             </div>
             <TaskForm user={user} />
 
