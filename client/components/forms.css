@@ -32,18 +32,8 @@
   color: white;
 }
 
-/* .login-form > div > input:focus {
-  outline: 0;
-} */
-
 .login-form > div > input:target {
   color: white;
-}
-
-input:focus {
-  outline: 0;
-  color: white;
-  box-sizing: border-box;
 }
 
 .login-form > div > input:focus {

@@ -72,7 +72,7 @@ export const App = () => {
           <Fragment>
 
             <div className="user" onClick={logout}>
-              {user.username} 🚪
+              <p>Welcome, <span>{user.username}</span>! 🚪</p>
             </div>
 
             <TaskForm user={user} />
