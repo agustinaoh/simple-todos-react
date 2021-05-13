@@ -18,7 +18,7 @@ export const TaskForm = () => {
     <form className='task-form' onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="Type to add new tasks"
+        placeholder="Type a new task..."
         value={text}
         onChange={(e) => setText(e.target.value)}
       />

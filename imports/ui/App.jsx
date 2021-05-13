@@ -72,9 +72,13 @@ export const App = () => {
           <Fragment>
 
             <div className="user" onClick={logout}>
-              <p>Welcome, <span>{user.username}</span>! 🚪</p>
+              <p>Hello, <span>{user.username}</span>! 🚪</p>
             </div>
-
+            <div>
+              <p>
+                Let's get things done
+              </p>
+            </div>
             <TaskForm user={user} />
 
             <div className="filter">
