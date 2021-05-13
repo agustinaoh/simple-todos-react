@@ -17,15 +17,16 @@ export const TaskForm = () => {
   return (
     <form className='task-form' onSubmit={handleSubmit}>
       <input
-        type='text'
-        placeholder='Type to add new tasks'
+        type="text"
+        placeholder="Type to add new tasks"
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
 
-      <button type='submit'>
-        Add Task
+      <button type="submit" class="btn">
+        <span>Add Task</span>
       </button>
+
     </form>
   );
 };

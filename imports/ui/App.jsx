@@ -96,8 +96,6 @@ export const App = () => {
               ))}
             </ul>
 
-            {/* <label for="color">Choose a background color</label>
-            <input id="color" type="color" name="color" value="#ffecd7"></input> */}
           </Fragment>
         ) : (
           <LoginForm />
